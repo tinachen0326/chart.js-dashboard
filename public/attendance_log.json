@@ -1,366 +1,82 @@
 [
   {
-    "type": "header",
-    "version": "5.2.1",
-    "comment": "Export to JSON plugin for PHPMyAdmin"
-  },
-  { "type": "database", "name": "school" },
-  {
     "type": "table",
     "name": "attendance_log",
-    "database": "school",
     "data": [
       {
-        "id": "22",
-        "name": "Tina",
-        "class_date": "2025-04-15",
-        "class_hours": "6",
-        "raw_hours": "0",
-        "attended_hours": "0",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "6"
+        "class_date": "2024-01-15",
+        "class_hours": "8.0",
+        "raw_hours": "9.0"
       },
       {
-        "id": "44",
-        "name": "Tina",
-        "class_date": "2025-04-16",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-16",
+        "class_hours": "7.5",
+        "raw_hours": "8.5"
       },
       {
-        "id": "66",
-        "name": "Tina",
-        "class_date": "2025-04-18",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-17",
+        "class_hours": "8.0",
+        "raw_hours": "9.2"
       },
       {
-        "id": "88",
-        "name": "Tina",
-        "class_date": "2025-04-21",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-18",
+        "class_hours": "6.5",
+        "raw_hours": "7.8"
       },
       {
-        "id": "110",
-        "name": "Tina",
-        "class_date": "2025-04-22",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-19",
+        "class_hours": "8.0",
+        "raw_hours": "9.0"
       },
       {
-        "id": "132",
-        "name": "Tina",
-        "class_date": "2025-04-24",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-22",
+        "class_hours": "7.0",
+        "raw_hours": "8.2"
       },
       {
-        "id": "154",
-        "name": "Tina",
-        "class_date": "2025-04-25",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-23",
+        "class_hours": "8.0",
+        "raw_hours": "9.1"
       },
       {
-        "id": "176",
-        "name": "Tina",
-        "class_date": "2025-04-28",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-24",
+        "class_hours": "7.5",
+        "raw_hours": "8.7"
       },
       {
-        "id": "198",
-        "name": "Tina",
-        "class_date": "2025-04-29",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-25",
+        "class_hours": "8.0",
+        "raw_hours": "9.3"
       },
       {
-        "id": "220",
-        "name": "Tina",
-        "class_date": "2025-04-30",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-26",
+        "class_hours": "6.0",
+        "raw_hours": "7.5"
       },
       {
-        "id": "242",
-        "name": "Tina",
-        "class_date": "2025-05-05",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-29",
+        "class_hours": "8.0",
+        "raw_hours": "9.0"
       },
       {
-        "id": "264",
-        "name": "Tina",
-        "class_date": "2025-05-06",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-30",
+        "class_hours": "7.8",
+        "raw_hours": "8.9"
       },
       {
-        "id": "286",
-        "name": "Tina",
-        "class_date": "2025-05-07",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-01-31",
+        "class_hours": "8.0",
+        "raw_hours": "9.2"
       },
       {
-        "id": "308",
-        "name": "Tina",
-        "class_date": "2025-05-08",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-02-01",
+        "class_hours": "7.2",
+        "raw_hours": "8.4"
       },
       {
-        "id": "330",
-        "name": "Tina",
-        "class_date": "2025-05-09",
-        "class_hours": "3",
-        "raw_hours": "3",
-        "attended_hours": "3",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "352",
-        "name": "Tina",
-        "class_date": "2025-05-12",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "374",
-        "name": "Tina",
-        "class_date": "2025-05-13",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "396",
-        "name": "Tina",
-        "class_date": "2025-05-14",
-        "class_hours": "6",
-        "raw_hours": "0",
-        "attended_hours": "0",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "6"
-      },
-      {
-        "id": "418",
-        "name": "Tina",
-        "class_date": "2025-05-15",
-        "class_hours": "6",
-        "raw_hours": "8.5",
-        "attended_hours": "7",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "440",
-        "name": "Tina",
-        "class_date": "2025-05-16",
-        "class_hours": "6",
-        "raw_hours": "8.5",
-        "attended_hours": "7",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "462",
-        "name": "Tina",
-        "class_date": "2025-05-19",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "484",
-        "name": "Tina",
-        "class_date": "2025-05-20",
-        "class_hours": "6",
-        "raw_hours": "3.55",
-        "attended_hours": "3",
-        "late_hours": "0",
-        "leave_early_hours": "3.95",
-        "absent_hours": "3"
-      },
-      {
-        "id": "506",
-        "name": "Tina",
-        "class_date": "2025-05-21",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "528",
-        "name": "Tina",
-        "class_date": "2025-05-22",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "550",
-        "name": "Tina",
-        "class_date": "2025-05-23",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "572",
-        "name": "Tina",
-        "class_date": "2025-05-26",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "594",
-        "name": "Tina",
-        "class_date": "2025-05-27",
-        "class_hours": "3",
-        "raw_hours": "3",
-        "attended_hours": "3",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "616",
-        "name": "Tina",
-        "class_date": "2025-05-28",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "638",
-        "name": "Tina",
-        "class_date": "2025-05-29",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "660",
-        "name": "Tina",
-        "class_date": "2025-06-02",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "682",
-        "name": "Tina",
-        "class_date": "2025-06-03",
-        "class_hours": "6",
-        "raw_hours": "7.5",
-        "attended_hours": "6",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
-      },
-      {
-        "id": "704",
-        "name": "Tina",
-        "class_date": "2025-06-04",
-        "class_hours": "7",
-        "raw_hours": "8.5",
-        "attended_hours": "7",
-        "late_hours": "0",
-        "leave_early_hours": "0",
-        "absent_hours": "0"
+        "class_date": "2024-02-02",
+        "class_hours": "8.0",
+        "raw_hours": "9.0"
       }
     ]
   }
