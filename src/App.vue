@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue";
+import { onMounted, ref, watch } from "vue";
 import StatCard from "./components/StatCard.vue";
 import AttendancePieChart from "./components/AttendancePieChart.vue";
 import DailyHoursLineChart from "./components/DailyHoursLineChart.vue";
@@ -122,7 +122,6 @@ export default {
     const { attendanceData, loading, error, loadData, calculateStats } =
       useAttendanceData();
 
-    // 統計資料
     const stats = ref({
       classHours: 187.0,
       attendedHours: 174.0,
@@ -132,7 +131,6 @@ export default {
       attendanceRate: 93.0,
     });
 
-    // 圖表資料
     const chartData = ref({
       pie: null,
       line: null,
@@ -149,12 +147,20 @@ export default {
 
       if (!records) return;
 
+      // 計算總課程時數
+      const totalClassHours = records.reduce(
+        (sum, record) => sum + parseFloat(record.class_hours),
+        0
+      );
+      const attendedHours = totalClassHours;
+      const absentHours = Math.max(0, 187 - attendedHours);
+
       // 圓餅圖資料
       chartData.value.pie = {
         labels: ["實際上課時數", "缺席時數"],
         datasets: [
           {
-            data: [174.0, 15.0],
+            data: [attendedHours, absentHours],
             backgroundColor: [
               "rgba(59, 130, 246, 0.8)", // blue-500
               "rgba(239, 68, 68, 0.8)", // red-500
@@ -209,8 +215,14 @@ export default {
     // 初始化應用
     const initializeApp = async () => {
       await loadData();
-      processChartData();
+      // 不要在這裡直接呼叫 processChartData
+      // 讓 watcher 自動處理
     };
+
+    // 監聽 attendanceData 變化，自動處理圖表資料
+    watch(attendanceData, () => {
+      processChartData();
+    });
 
     onMounted(() => {
       initializeApp();
