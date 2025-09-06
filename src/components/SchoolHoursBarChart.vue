@@ -1,5 +1,7 @@
 <template>
-  <Bar :data="data" :options="options" />
+  <div class="card-body h-180">
+    <Bar :data="data" :options="options" />
+  </div>
 </template>
 
 <script setup>

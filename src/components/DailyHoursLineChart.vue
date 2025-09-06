@@ -1,5 +1,7 @@
 <template>
-  <Line :data="data" :options="options" />
+  <div class="card-body h-180">
+    <Line :data="data" :options="options" v-if="data" />
+  </div>
 </template>
 
 <script setup>
