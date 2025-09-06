@@ -27,7 +27,7 @@ import {
   XCircleIcon,
   ClockIcon,
   ArrowRightCircleIcon,
-  PercentIcon,
+  ChartBarIcon,
 } from "@heroicons/vue/24/outline";
 
 const props = defineProps({
@@ -44,7 +44,7 @@ const iconMap = {
   "x-circle": XCircleIcon,
   clock: ClockIcon,
   "arrow-right-circle": ArrowRightCircleIcon,
-  percent: PercentIcon,
+  percent: ChartBarIcon, // 用 ChartBarIcon 取代 PercentIcon
 };
 const iconComponent = computed(() => iconMap[props.icon] || BookOpenIcon);
 
