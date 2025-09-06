@@ -57,19 +57,19 @@
     <section class="container mx-auto py-8 px-4">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
-          <h3 class="text-lg font-semibold text-center mb-4 text-blue-600">
+          <h3 class="text-lg font-semibold text-center mb-4 text-blue-700">
             出席狀況
           </h3>
           <AttendancePieChart v-if="chartData.pie" :data="chartData.pie" />
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
-          <h3 class="text-lg font-semibold text-center mb-4 text-green-600">
+          <h3 class="text-lg font-semibold text-center mb-4 text-blue-700">
             每日上課時數
           </h3>
           <DailyHoursLineChart v-if="chartData.line" :data="chartData.line" />
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
-          <h3 class="text-lg font-semibold text-center mb-4 text-yellow-600">
+          <h3 class="text-lg font-semibold text-center mb-4 text-blue-700">
             每日在校時數
           </h3>
           <SchoolHoursBarChart v-if="chartData.bar" :data="chartData.bar" />
@@ -219,8 +219,6 @@ export default {
     // 初始化應用
     const initializeApp = async () => {
       await loadData();
-      // 不要在這裡直接呼叫 processChartData
-      // 讓 watcher 自動處理
     };
 
     // 監聽 attendanceData 變化，自動處理圖表資料
