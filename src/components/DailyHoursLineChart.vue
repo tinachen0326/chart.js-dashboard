@@ -16,7 +16,7 @@ import {
   Tooltip,
   Legend,
   Filler,
-} from "chart.js";
+} from "vue-chart.js";
 
 ChartJS.register(
   CategoryScale,
