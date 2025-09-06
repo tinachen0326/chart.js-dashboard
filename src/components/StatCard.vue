@@ -1,9 +1,6 @@
 <template>
   <div
-    :class="[
-      'rounded-2xl shadow-md p-6 flex items-center gap-4 transition-transform hover:scale-105',
-      bgColor,
-    ]"
+    class="rounded-2xl shadow-md p-6 flex items-center gap-4 transition-transform hover:scale-105 bg-white"
   >
     <div :class="['rounded-full p-3', iconBgColor]">
       <component :is="iconComponent" class="w-7 h-7 text-white" />
@@ -20,7 +17,6 @@
 
 <script setup>
 import { computed } from "vue";
-// 你可以用 Heroicons 或 FontAwesome，這裡以 Heroicons 為例
 import {
   BookOpenIcon,
   CheckCircleIcon,
@@ -48,14 +44,6 @@ const iconMap = {
 };
 const iconComponent = computed(() => iconMap[props.icon] || BookOpenIcon);
 
-const colorMap = {
-  blue: "bg-blue-100",
-  green: "bg-green-100",
-  red: "bg-red-100",
-  yellow: "bg-yellow-100",
-  purple: "bg-purple-100",
-  teal: "bg-teal-100",
-};
 const iconBgMap = {
   blue: "bg-blue-500",
   green: "bg-green-500",
@@ -64,6 +52,5 @@ const iconBgMap = {
   purple: "bg-purple-500",
   teal: "bg-teal-500",
 };
-const bgColor = computed(() => colorMap[props.color] || "bg-gray-100");
 const iconBgColor = computed(() => iconBgMap[props.color] || "bg-gray-400");
 </script>
