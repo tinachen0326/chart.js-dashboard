@@ -1,6 +1,6 @@
 <template>
-  <div class="card-body" style="height: 320px">
-    <DailyHoursLineChart v-if="chartData.line" :data="chartData.line" />
+  <div style="height: 320px">
+    <Line :data="data" :options="options" />
   </div>
 </template>
 
