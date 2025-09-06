@@ -1,78 +1,69 @@
 <template>
-  <div class="card">
-    <div class="card-header">
-      <h3 class="text-sm font-semibold text-gray-700 text-center">
-        {{ title }}
-      </h3>
+  <div
+    :class="[
+      'rounded-2xl shadow-md p-6 flex items-center gap-4 transition-transform hover:scale-105',
+      bgColor,
+    ]"
+  >
+    <div :class="['rounded-full p-3', iconBgColor]">
+      <component :is="iconComponent" class="w-7 h-7 text-white" />
     </div>
-    <div class="card-body">
-      <p class="text-3xl font-bold text-blue-600 text-center">
-        {{ displayValue }}{{ suffix }}
-      </p>
+    <div>
+      <div class="text-gray-500 text-sm">{{ title }}</div>
+      <div class="text-2xl font-bold text-gray-800">
+        {{ value
+        }}<span v-if="suffix" class="text-base font-normal">{{ suffix }}</span>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
-import { ref, onMounted, watch } from "vue";
-import { useNumberAnimation } from "../composables/useNumberAnimation.js";
+<script setup>
+import { computed } from "vue";
+// 你可以用 Heroicons 或 FontAwesome，這裡以 Heroicons 為例
+import {
+  BookOpenIcon,
+  CheckCircleIcon,
+  XCircleIcon,
+  ClockIcon,
+  ArrowRightCircleIcon,
+  PercentIcon,
+} from "@heroicons/vue/24/outline";
 
-export default {
-  name: "StatCard",
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    value: {
-      type: Number,
-      required: true,
-    },
-    suffix: {
-      type: String,
-      default: "",
-    },
-    animate: {
-      type: Boolean,
-      default: false,
-    },
-    duration: {
-      type: Number,
-      default: 1000,
-    },
-  },
-  setup(props) {
-    const displayValue = ref(props.animate ? 0 : props.value);
-    const { animateNumber } = useNumberAnimation();
+const props = defineProps({
+  title: String,
+  value: [String, Number],
+  color: String,
+  icon: String,
+  suffix: String,
+});
 
-    const startAnimation = () => {
-      if (props.animate) {
-        animateNumber(displayValue, props.value, props.duration);
-      } else {
-        displayValue.value = props.value;
-      }
-    };
-
-    onMounted(() => {
-      // 延遲動畫以創造更好的視覺效果
-      setTimeout(startAnimation, Math.random() * 300);
-    });
-
-    // 監聽 value 變化
-    watch(
-      () => props.value,
-      (newValue) => {
-        if (props.animate) {
-          animateNumber(displayValue, newValue, props.duration);
-        } else {
-          displayValue.value = newValue;
-        }
-      }
-    );
-
-    return {
-      displayValue,
-    };
-  },
+const iconMap = {
+  "book-open": BookOpenIcon,
+  "check-circle": CheckCircleIcon,
+  "x-circle": XCircleIcon,
+  clock: ClockIcon,
+  "arrow-right-circle": ArrowRightCircleIcon,
+  percent: PercentIcon,
 };
+const iconComponent = computed(() => iconMap[props.icon] || BookOpenIcon);
+
+const colorMap = {
+  blue: "bg-blue-100",
+  green: "bg-green-100",
+  red: "bg-red-100",
+  yellow: "bg-yellow-100",
+  purple: "bg-purple-100",
+  teal: "bg-teal-100",
+};
+const iconBgMap = {
+  blue: "bg-blue-500",
+  green: "bg-green-500",
+  red: "bg-red-500",
+  yellow: "bg-yellow-500",
+  purple: "bg-purple-500",
+  teal: "bg-teal-500",
+};
+const bgColor = computed(() => colorMap[props.color] || "bg-gray-100");
+const iconBgColor = computed(() => iconBgMap[props.color] || "bg-gray-400");
 </script>

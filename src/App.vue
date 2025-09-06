@@ -1,74 +1,78 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <!-- 標題 -->
-    <header class="bg-white shadow-sm">
-      <div class="container py-6">
-        <h1 class="text-4xl font-bold text-center text-blue-600">
+  <div class="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+    <!-- 標題區 -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+      <div class="container mx-auto py-6 px-4">
+        <h1 class="text-4xl font-bold text-blue-700 text-center tracking-wide">
           Tina 出缺勤儀表板
         </h1>
+        <p class="text-center text-gray-500 mt-2">即時掌握課程出勤狀況</p>
       </div>
     </header>
 
-    <!-- 統計卡片區域 -->
-    <section class="container py-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- 統計卡片區 -->
+    <section class="container mx-auto py-8 px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <StatCard
           title="總課程時數"
           :value="stats.classHours"
-          :animate="true"
+          color="blue"
+          icon="book-open"
         />
         <StatCard
           title="實際上課時數"
           :value="stats.attendedHours"
-          :animate="true"
+          color="green"
+          icon="check-circle"
         />
-        <StatCard title="缺席時數" :value="stats.absentHours" :animate="true" />
-        <StatCard title="遲到時數" :value="stats.lateHours" :animate="true" />
+        <StatCard
+          title="缺席時數"
+          :value="stats.absentHours"
+          color="red"
+          icon="x-circle"
+        />
+        <StatCard
+          title="遲到時數"
+          :value="stats.lateHours"
+          color="yellow"
+          icon="clock"
+        />
         <StatCard
           title="早退時數"
           :value="stats.leaveEarlyHours"
-          :animate="true"
+          color="purple"
+          icon="arrow-right-circle"
         />
         <StatCard
           title="出勤比率"
           :value="stats.attendanceRate"
-          :animate="true"
+          color="teal"
+          icon="percent"
           suffix="%"
         />
       </div>
     </section>
 
-    <!-- 圖表區域 -->
-    <section class="container py-8">
+    <!-- 圖表區 -->
+    <section class="container mx-auto py-8 px-4">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <!-- 圓餅圖 -->
-        <div class="card">
-          <div class="card-header">
-            <h3 class="text-lg font-semibold text-center">出席狀況</h3>
-          </div>
-          <div class="card-body">
-            <AttendancePieChart v-if="chartData.pie" :data="chartData.pie" />
-          </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <h3 class="text-lg font-semibold text-center mb-4 text-blue-600">
+            出席狀況
+          </h3>
+          <AttendancePieChart v-if="chartData.pie" :data="chartData.pie" />
         </div>
-
-        <!-- 折線圖 -->
-        <div class="card">
-          <div class="card-header">
-            <h3 class="text-lg font-semibold text-center">每日上課時數</h3>
-          </div>
-          <div class="card-body">
-            <DailyHoursLineChart v-if="chartData.line" :data="chartData.line" />
-          </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <h3 class="text-lg font-semibold text-center mb-4 text-green-600">
+            每日上課時數
+          </h3>
+          <DailyHoursLineChart v-if="chartData.line" :data="chartData.line" />
         </div>
-
-        <!-- 長條圖 -->
-        <div class="card">
-          <div class="card-header">
-            <h3 class="text-lg font-semibold text-center">每日在校時數</h3>
-          </div>
-          <div class="card-body">
-            <SchoolHoursBarChart v-if="chartData.bar" :data="chartData.bar" />
-          </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <h3 class="text-lg font-semibold text-center mb-4 text-yellow-600">
+            每日在校時數
+          </h3>
+          <SchoolHoursBarChart v-if="chartData.bar" :data="chartData.bar" />
         </div>
       </div>
     </section>
