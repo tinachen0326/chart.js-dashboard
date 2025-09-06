@@ -1,10 +1,14 @@
-# 個人出缺勤儀表板 (Personal Attendance Dashboard)
+# 個人出缺勤儀表板 Personal Attendance Dashboard
 
 一個基於 Vue 3 的響應式出缺勤資料視覺化儀表板，展示現代前端開發技術與資料處理能力。
 
 ## 專案簡介
 
 本專案是一個以 **Vue 3 + Vite + Tailwind CSS + Chart.js** 打造的現代化出缺勤儀表板，能即時呈現課程出勤統計、每日上課時數、在校時數等資訊。介面簡潔美觀，響應式設計，適合各種裝置瀏覽。
+
+## 網址
+
+[chart-js-dashboard-vue.vercel.app](https://chart-js-dashboard-vue.vercel.app/)
 
 ## 核心價值
 
