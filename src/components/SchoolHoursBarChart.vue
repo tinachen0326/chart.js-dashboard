@@ -1,5 +1,5 @@
 <template>
-  <div class="card-body h-180">
+  <div class="card-body" style="height: 320px">
     <Bar :data="data" :options="options" />
   </div>
 </template>
