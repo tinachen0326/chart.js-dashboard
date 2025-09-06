@@ -1,13 +1,11 @@
 <template>
-  <div class="relative h-64">
-    <canvas ref="chartCanvas"></canvas>
-  </div>
+  <Bar :data="data" :options="options" />
 </template>
 
-<script>
-import { ref, onMounted, onUnmounted, watch, nextTick } from "vue";
+<script setup>
+import { Bar } from "vue-chartjs";
 import {
-  Chart as ChartJS,
+  Chart,
   CategoryScale,
   LinearScale,
   BarElement,
@@ -16,91 +14,23 @@ import {
   Legend,
 } from "chart.js";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-export default {
-  name: "SchoolHoursBarChart",
-  props: {
-    data: {
-      type: Object,
-      required: true,
-    },
+const props = defineProps({
+  data: { type: Object, required: true },
+});
+
+const options = {
+  responsive: true,
+  maintainAspectRatio: false,
+  scales: {
+    x: { title: { display: true, text: "日期" } },
+    y: { beginAtZero: true, title: { display: true, text: "時數 (小時)" } },
   },
-  setup(props) {
-    const chartCanvas = ref(null);
-    const chartInstance = ref(null);
-
-    const createChart = async () => {
-      await nextTick();
-
-      if (!chartCanvas.value || !props.data) return;
-
-      if (chartInstance.value) {
-        chartInstance.value.destroy();
-      }
-
-      const ctx = chartCanvas.value.getContext("2d");
-
-      chartInstance.value = new ChartJS(ctx, {
-        type: "bar",
-        data: props.data,
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            x: {
-              title: {
-                display: true,
-                text: "日期",
-              },
-              ticks: {
-                maxTicksLimit: 8,
-              },
-            },
-            y: {
-              beginAtZero: true,
-              title: {
-                display: true,
-                text: "時數 (小時)",
-              },
-            },
-          },
-          plugins: {
-            legend: {
-              position: "top",
-            },
-            tooltip: {
-              mode: "index",
-              intersect: false,
-            },
-          },
-          animation: {
-            duration: 1200,
-          },
-        },
-      });
-    };
-
-    onMounted(createChart);
-
-    onUnmounted(() => {
-      if (chartInstance.value) {
-        chartInstance.value.destroy();
-      }
-    });
-
-    watch(() => props.data, createChart, { deep: true });
-
-    return {
-      chartCanvas,
-    };
+  plugins: {
+    legend: { position: "top" },
+    tooltip: { mode: "index", intersect: false },
   },
+  animation: { duration: 1500 },
 };
 </script>
