@@ -16,6 +16,22 @@
 - **用戶體驗**：簡潔明瞭的介面設計，支援響應式佈局
 - **技術展示**：結合 Vue 3 Composition API、Tailwind CSS 與 Chart.js 的完整應用
 
+## 核心技術亮點
+
+1. 資料狀態轉換
+
+- JSON 中原始資料轉換為可視化數據
+- 使用 useAttendanceData.js 集中處理
+
+2. 圖表動態更新
+
+- Vue watch 監聽資料變化
+- Chart.js 實例安全銷毀與重建
+
+3. 統計數字動畫
+
+- 透過 useNumberAnimation.js，數值呈現更具互動感
+
 ## 功能特色
 
 ### 資料視覺化
@@ -95,22 +111,6 @@ npm run build
 # 預覽建置結果
 npm run preview
 ```
-
-## 核心技術亮點
-
-1. 資料狀態轉換
-
-- JSON 中原始資料轉換為可視化數據
-- 使用 useAttendanceData.js 集中處理
-
-2. 圖表動態更新
-
-- Vue watch 監聽資料變化
-- Chart.js 實例安全銷毀與重建
-
-3. 統計數字動畫
-
-- 透過 useNumberAnimation.js，數值呈現更具互動感
 
 ## 未來優化
 
