@@ -71,7 +71,7 @@
 ## 專案結構
 
 ```
-chart.js-dashboard-vue/
+chart.js-dashboard/
 ├── public/
 │   └── attendance_log.json      # 出缺勤資料(JSON格式)
 ├── src/
