@@ -96,8 +96,8 @@ chart.js-dashboard/
 
 ```
 # 1. Clone 專案
-git clone https://github.com/tinachen0326/chart.js-dashboard-vue.git
-cd chart.js-dashboard-vue
+git clone https://github.com/tinachen0326/chart.js-dashboard.git
+cd chart.js-dashboard
 
 # 2. 安裝依賴
 npm install
